@@ -18,4 +18,5 @@ public class Main {
 			System.out.println("다시 입력하세요.");
 		}
 	}
+    
 }
