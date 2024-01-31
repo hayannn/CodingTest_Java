@@ -28,12 +28,11 @@ public class Main {
         if(reverse1 > reverse2) {
             System.out.println(reverse1);
         }
-        else if(reverse1 < reverse2) {
+        if(reverse1 < reverse2) {
             System.out.println(reverse2);
         }
-
-        else {
-            System.out.print("두 수가 동일합니다.");
+        if(reverse1 == reverse2) {
+            System.out.println("두 수가 동일합니다.");
         }
     }
 }
