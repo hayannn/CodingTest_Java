@@ -1,0 +1,3 @@
+-- 동물 이름 몇개인지 조회(NULL 집계 안하고, 중복은 1개로)
+SELECT COUNT(DISTINCT NAME) FROM ANIMAL_INS AS count
+WHERE NAME IS NOT NULL
