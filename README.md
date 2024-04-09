@@ -11,7 +11,6 @@
 <br>
 
 # 💌 현재 티어
-- Last Update : 2024/03/19
-![image](https://github.com/hayannn/CodingTest_Java/assets/102213509/4eb59a56-f967-4fc3-8b7d-0e9273fed0b7)
+[![Solved.ac 프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=dlkgdis801)](https://solved.ac/dlkgdis801)
 
 ---
