@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/60059. 자물쇠와 열쇠" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/60061. 기둥과 보 설치" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/60062. 외벽 점검" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/60063. 블록 이동하기" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/87694. 아이템 줍기" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

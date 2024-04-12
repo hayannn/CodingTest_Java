@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/1327. 소트 게임" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/16236. 아기 상어" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/1715. 카드 정렬하기" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/19236. 청소년 상어" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/19237. 어른 상어" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2110. 공유기 설치" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/3665. 최종 순위" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/1204. ［S／W 문제해결 기본］ 1일차 － 최빈수 구하기" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/1859. 백만 장자 프로젝트" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/1954. 달팽이 숫자" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2001. 파리 퇴치" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
