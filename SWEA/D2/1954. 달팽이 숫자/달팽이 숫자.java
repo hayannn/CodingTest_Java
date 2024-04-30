@@ -10,7 +10,9 @@ class Solution {
             int n = sc.nextInt();
             int[][] multi = new int[n][n];
 
-            int r = 0, c = 0, num = 1;
+            int r = 0;
+            int c = 0;
+            int num = 1;
 
             while (num <= n * n) {
                 // 우
