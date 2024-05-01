@@ -40,8 +40,8 @@ class Solution {
                 while (r >= 0 && multi[r][c] == 0) {
                     multi[r--][c] = num++;
                 }
-                r++; // 범위를 벗어난 행을 되돌아감
-                c++; // 열을 증가시켜 범위 안으로 이동
+                r++;  // 범위를 벗어난 행을 되돌아감
+                c++;  // 열을 증가시켜 범위 안으로 이동
             }
 
             System.out.println("#" + test_case);
