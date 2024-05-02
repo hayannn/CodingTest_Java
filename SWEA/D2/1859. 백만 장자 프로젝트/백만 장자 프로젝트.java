@@ -22,14 +22,15 @@ class Solution
 					.collect(Collectors.toList());
 			
 			int[] temp = new int[numList.size()];
-			int maxPrice = 0;
+			int max = 0;
 			double result = 0;
 			
 			for(int i=n-1; i>=0; i--) {
-				if(maxPrice < numList.get(i).intValue())
-					maxPrice = numList.get(i).intValue();
-					temp[i] = maxPrice - numList.get(i).intValue();
+				if(max < numList.get(i).intValue())
+					max = numList.get(i).intValue();
+					temp[i] = max - numList.get(i).intValue();
 			}
+            
 			for(int i=0; i<temp.length; i++)
 				result += temp[i];
 			 System.out.println("#" + test_case + " " + Math.round(result));
