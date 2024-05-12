@@ -18,7 +18,7 @@ class Solution
             }
  
             int count = 0;
-            for (int i = 2; i < n - 2; i++) {
+            for (int i = 2; i < n-2; i++) {
                 int max = Math.max(array[i-2],
                         Math.max(array[i-1],
                                 Math.max(array[i+1], array[i+2])));
