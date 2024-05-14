@@ -1,5 +1,4 @@
-import java.util.Scanner;
-import java.io.FileInputStream;
+import java.util.*;
 
 class Solution
 {
@@ -7,22 +6,22 @@ class Solution
 	{
 
 		Scanner sc = new Scanner(System.in);
-		int T;
-		T=sc.nextInt();
+		int T=sc.nextInt();
 
 		for(int test_case = 1; test_case <= T; test_case++)
 		{
 			sc.nextInt();
-			int[] score = new int[101]; //100점까지 점수 의 개수 저장
+			int[] score = new int[101];
 			 
-			for(int i=0; i<1000; i++) { //1000명까지 제한
+			for(int i=0; i<1000; i++) {
 				 score[sc.nextInt()]++;
 			 }
 			
-			 int most=0, result=0; //최빈값과 최빈값인 점수 저장 변수
+			 int max=0;
+             int result=0;
 			 for(int i=0; i < score.length; i++) {
-				 if(score[i]>=most) {
-					 most = score[i];
+				 if(score[i]>=max) {
+					 max = score[i];
 					 result = i;
 				 }
 			 }
