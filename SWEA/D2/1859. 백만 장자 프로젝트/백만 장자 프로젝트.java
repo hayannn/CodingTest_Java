@@ -1,39 +1,38 @@
-import java.util.Arrays;
 import java.util.Scanner;
-import java.util.stream.Collectors;
-import java.util.List;
 import java.io.FileInputStream;
 
 class Solution
 {
 	public static void main(String args[]) throws Exception
 	{
-		
+
 		Scanner sc = new Scanner(System.in);
-		int T;
-		T=sc.nextInt();
-		sc.nextLine();
+		int T=sc.nextInt();
+
 
 		for(int test_case = 1; test_case <= T; test_case++)
 		{
-			int n = Integer.parseInt(sc.nextLine());
-			List<Integer> numList = Arrays.stream(sc.nextLine().split(" "))
-					.map(Integer::parseInt)
-					.collect(Collectors.toList());
 			
-			int[] temp = new int[numList.size()];
-			int max = 0;
-			double result = 0;
+			int N = sc.nextInt();
+			int[] arr = new int[N];
 			
-			for(int i=n-1; i>=0; i--) {
-				if(max < numList.get(i).intValue())
-					max = numList.get(i).intValue();
-					temp[i] = max - numList.get(i).intValue();
+			for(int i=0; i<N; i++) {
+				arr[i] = sc.nextInt();
 			}
-            
-			for(int i=0; i<temp.length; i++)
-				result += temp[i];
-			 System.out.println("#" + test_case + " " + Math.round(result));
+			
+			int max = 0;
+			long sum = 0;
+			long diff = 0;
+			
+			for(int i=N-1; i>=0; i--) {
+				if(arr[i] >= max) { // 현재의 가격이 최대값보다 크거나 같을 때만 차익 계산
+					max = arr[i];
+				} else { // 최대값보다 작을 때 차익 계산
+					diff = max - arr[i];
+					sum += diff;
+				}
+			}
+			System.out.println("#" + test_case + " " + sum);
 		}
 	}
 }
