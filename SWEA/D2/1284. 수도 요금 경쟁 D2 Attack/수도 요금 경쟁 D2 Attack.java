@@ -1,5 +1,4 @@
-import java.util.Scanner;
-import java.io.FileInputStream;
+import java.util.*;
 
 class Solution
 {
@@ -20,12 +19,6 @@ class Solution
 			int result = 0;
 
 			for(int i=0; i<W; i++) {
-				/*if(W<=R) {
-					result = Q;
-				}
-				else {
-					result = Q + (W-R)*S;
-				}*/
 				result = Math.min(W*P, Math.max(Q,Q + (W-R)*S));
 			}
 			System.out.println("#" + test_case + " " + result);
