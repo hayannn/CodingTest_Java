@@ -1,5 +1,4 @@
-import java.util.Scanner;
-import java.io.FileInputStream;
+import java.util.*;
 
 class Solution
 {
@@ -30,7 +29,7 @@ class Solution
 			
 			if(arr.length < N) {
             	N = arr.length;
-            }
+      }
 			
 			dfs(0,0);
 			
@@ -50,18 +49,18 @@ class Solution
         }
    
         //2. 계산 : 배열 교환 계산하기
-		for(int i = start; i < arr.length; i++) {
-			for(int j = i+1; j < arr.length; j++) {
-				int temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
-                
-                dfs(i, count+1);
-                
-                temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;  
+				for(int i = start; i < arr.length; i++) {
+					for(int j = i+1; j < arr.length; j++) {
+						int temp = arr[i];
+		        arr[i] = arr[j];
+		        arr[j] = temp;
+		                
+		        dfs(i, count+1);
+		                
+		        temp = arr[i];
+		        arr[i] = arr[j];
+			      arr[j] = temp;  
 			}
 		}
-    }
+	}
 }
