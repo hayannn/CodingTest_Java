@@ -13,7 +13,7 @@ public class Main {
 		}
 		
 		for(int i=0; i<N; i++) {
-			if(arr[i] == 1) continue; //1은 소수에서 제외시키기
+			if(arr[i] == 1) continue; //1은 소수가 안되니 바로 제외
 			
 			int primNum = 0;
 			
