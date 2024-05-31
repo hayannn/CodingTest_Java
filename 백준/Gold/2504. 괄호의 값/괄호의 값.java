@@ -7,28 +7,12 @@ public class Main {
 		String List = sc.nextLine();
 		
 		Stack<Character> stack = new Stack<>();
+        
 		int result = 0;
 		int temp = 1; //임시 값은 괄호가 여는 괄호일 경우 2로, 여는 대괄호일 경우 3으로 초기화
 		boolean isValid = true; //올바른 괄호 쌍이 입력되었는지 여부 확인
 		
 		for(int i=0; i<List.length(); i++) {
-		/*
-			if(List.charAt(i) == '(') openCntS++;
-			
-			if(List.charAt(i) == ')') closeCntS++;
-		
-			if(List.charAt(i) == '[') openCntL++;
-		
-			if(List.charAt(i) == ']') closeCntL++;
-		
-		}
-		
-		if(openCntS == closeCntS && openCntL == closeCntL) {
-			result = (openCntS*2) + ((openCntL+1)*3);
-		} else {
-			result = 0;
-		}
-		*/
 			
 			/*여는 괄호인 경우
 			- 해당 괄호를 스택에 push
@@ -77,9 +61,6 @@ public class Main {
 				temp /= 3;
 			}
 		}
-		
-		
-		
 		
 		if(!isValid || !stack.isEmpty()) { //!(올바른 괄호열) 즉, 올바르지 않은 괄호열이거나 스택이 비어있지 않은 경우 결과는 0 출력
 			result = 0;
