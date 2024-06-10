@@ -7,6 +7,7 @@ public class Main {
     static int[] Indegree;
     static boolean[][] TD;
     static int[] Rank;
+    
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -58,7 +59,7 @@ public class Main {
                 }
             }
             boolean isUnique = true;
-            int count = 0;
+            int count = 0; //큐에 들어간 노드 수를 카운트하기
             while (!queue.isEmpty()) {
                 if (queue.size() > 1) {
                     isUnique = false;
@@ -76,7 +77,7 @@ public class Main {
                     }
                 }
             }
-            if (!isUnique || count < N) {
+            if (!isUnique || count < N) { //사이클 존재 or 모든 노드 방문 안한 경우
                 System.out.println("IMPOSSIBLE");
             } else {
                 System.out.println(result);
