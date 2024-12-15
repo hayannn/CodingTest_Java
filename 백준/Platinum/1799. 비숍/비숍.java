@@ -2,97 +2,97 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-    static int N, result, black, white;
-    static int[][] map, chess;
-    static boolean[][] visited;
-    static int[][] deltas = {{-1,-1}, {-1,1}, {1,-1}, {1,1}};
-    
+    static int N;
+    static int maxBishops;
+    static int maxBlackBishops;
+    static int maxWhiteBishops;
+
+    static int[][] board;
+    static int[][] colorPattern;
+    static boolean[][] occupied;
+    static int[][] directions = {{-1,-1},{-1,1},{1,-1},{1,1}};
+
     public static void main(String[] args) throws IOException {
-        input();
-        solve();
-        System.out.println(result);
-    }
-
-    public static void input() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-
-        N = Integer.parseInt(st.nextToken());
-        map = new int[N][N];
-        visited = new boolean[N][N];
+        N = Integer.parseInt(br.readLine());
+        board = new int[N][N];
+        occupied = new boolean[N][N];
         
         for (int i = 0; i < N; i++) {
-            st = new StringTokenizer(br.readLine());
+            StringTokenizer st = new StringTokenizer(br.readLine());
             for (int j = 0; j < N; j++) {
-                map[i][j] = Integer.parseInt(st.nextToken());
+                board[i][j] = Integer.parseInt(st.nextToken());
             }
         }
         
-        chess = new int[N][N];
+        colorPattern = new int[N][N];
+        initializeColorPattern();
+
+        backtrack(0, 0, 0, 0);
+        backtrack(0, 1, 1, 0);
+
+        maxBishops = maxBlackBishops + maxWhiteBishops;
+        System.out.println(maxBishops);
+    }
+
+    static void initializeColorPattern() {
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
-                chess[i][j] = (i + j) % 2;
+                colorPattern[i][j] = (i + j) % 2;
             }
         }
     }
 
-    public static void solve() {
-        black = 0;
-        white = 0;
-        dfs(0, 0, chess[0][0], 0);
-        dfs(0, 1, chess[0][1], 0);
-        result = black + white;
-    }
-
-    public static void dfs(int y, int x, int color, int count) {
+    static void backtrack(int y, int x, int color, int count) {
         if (y >= N) {
             if (color == 0) {
-                black = Math.max(black, count);
+                maxBlackBishops = Math.max(maxBlackBishops, count);
             } else {
-                white = Math.max(white, count);
+                maxWhiteBishops = Math.max(maxWhiteBishops, count);
             }
             return;
         }
 
-        int nx = x + 2;
-        int ny = y;
+        int nextX = x + 2;
+        int nextY = y;
 
-        if (nx >= N) {
-            ny++;
-            if (ny < N) {
-                nx = (chess[ny][0] == color) ? 0 : 1;
+        if (nextX >= N) {
+            nextY++;
+            if (nextY < N) {
+                nextX = colorPattern[nextY][0] == color ? 0 : 1;
             }
         }
 
-        if (map[y][x] == 0) {
-            dfs(ny, nx, color, count);
+        if (board[y][x] == 0) {
+            backtrack(nextY, nextX, color, count);
             return;
         }
 
-        if (check(y, x)) {
-            visited[y][x] = true;
-            dfs(ny, nx, color, count + 1);
-            visited[y][x] = false;
+        if (isValidPosition(y, x)) {
+            occupied[y][x] = true;
+            backtrack(nextY, nextX, color, count + 1);
+            occupied[y][x] = false;
         }
 
-        dfs(ny, nx, color, count);
+        backtrack(nextY, nextX, color, count);
     }
 
-    public static boolean check(int x, int y) {
-        int goCnt = 0;
+    static boolean isValidPosition(int x, int y) {
+        int directionCount = 0;
         for (int dir = 0; dir < 4; dir++) {
-            if (go(x, y, dir)) goCnt++;
+            if (canMove(x, y, dir)) directionCount++;
         }
-        return goCnt >= 4;
+        return directionCount == 4;
     }
 
-    public static boolean go(int x, int y, int dir) {
-        int nx = x, ny = y;
+    static boolean canMove(int x, int y, int dir) {
+        int nx = x;
+        int ny = y;
         while (true) {
-            nx += deltas[dir][0];
-            ny += deltas[dir][1];
+            nx += directions[dir][0];
+            ny += directions[dir][1];
             if (nx < 0 || nx >= N || ny < 0 || ny >= N) break;
-            if (visited[nx][ny]) return false;
+            if (occupied[nx][ny]) return false;
         }
         return true;
     }
